@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spaProject.dao.JoinMapper">
+	
+	<resultMap type="User" id="userResultMap">
+		<result property="userEmail" column="user_email"/>
+		<result property="userPw" column="userEmail"/>
+		<result property="userName" column="userEmail"/>
+		<result property="userRegDate" column="userEmail"/>
+	</resultMap>
+	
+	<!-- 회원가입 -->
+	<insert id="addUser" parameterType="User">
+		INSERT INTO user(
+			user_email
+			,user_pw
+			,user_name
+			,user_reg_date
+			)VALUES(
+			#{userEmail}
+			,#{userPw}
+			,#{userName}
+			,NOW()
+			);
+	</insert>
+	
+	<!-- 닉네임 중복체크 -->
+	<select id="userNameCheck" parameterType="String" resultType="int">
+	    SELECT 
+			count(1)
+		FROM 
+			user
+		WHERE
+			user_name = #{userName};
+	</select>
+	
+	<!-- 이메일 중복체크 -->
+	<select id="userEmailCheck" parameterType="String" resultType="int">
+		SELECT 
+			count(1)
+		FROM 
+			user
+		WHERE
+			user_email = #{userEmail};
+	</select>
+</mapper>

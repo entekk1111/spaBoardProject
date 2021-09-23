@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div id="leftcolumn" th:fragment="leftFragment">
+ 		<div th:if="${session.SNAME == ''.toString() or session.SNAME == null}" id="loginForm">
+ 			<form id="userLoginForm" method="post" th:action="@{/login}">
+		 		<table id="loginTb">
+		 			<thead>
+		 				<tr>
+		 					<th style="border: none;" colspan="2">
+		 						로그인
+		 					</th>
+		 				</tr>
+		 			</thead>
+		 			<tbody>
+		 				<tr>
+		 					<td style="border: none;">
+		 						<input style="width: 130px;" type="text" id="loginUserEmail" name="userEmail" placeholder="이메일"/>
+		 					</td>
+		 				</tr>
+		 				<tr>
+		 					<td style="border: none;">
+		 						<input style="width: 130px;" type="password" id="loginUserPw" name="userPw" placeholder="비밀번호"/>
+		 					</td>	 					
+		 				</tr>
+		 				<tr>
+		 					<td style="border: none;" colspan="2">
+		 						<button id="loginBtn" type="button">로그인</button>
+		 						<button id="joinBtn" type="button">회원가입</button>
+		 					</td>
+		 				</tr>
+		 			</tbody>
+		 		</table>
+ 			</form>
+	 	</div>
+	 	<div id="userInfo" th:unless="${session.SNAME == ''.toString() or session.SNAME == null}">
+	 		<h1 th:text="${session.SNAME}"></h1>
+	 		<a th:href="@{/(value=${session.SEMAIL})}">내글보기</a><br/>
+	 		<a th:href="@{/logout}">로그아웃</a>
+	 	</div>
+	 	<div id="loginMsg"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/*
+      Created by Keith Donegan of Code-Sucks.com
+	  
+	  E-Mail: Keithdonegan@gmail.com
+	  
+	  You can do whatever you want with these layouts,
+	  but it would be greatly appreciated if you gave a link
+	  back to http://www.code-sucks.com
+	  
+*/
+
+* { padding: 0; margin: 0; }
+
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 13px;
+}
+a{	
+ text-decoration:none;
+}
+textarea{
+	width: 100%
+}
+#wrapper { 
+ margin: 0 auto;
+ width: 922px;
+
+}
+#header {
+ color: #333;
+ width: 900px;
+ float: left;
+ padding: 10px;
+ border: 1px solid #ccc;
+ height: 100px;
+ margin: 10px 0px 0px 0px;
+ background: #BD9C8C;
+}
+#mainMenu{
+    padding-top: 80px;
+    padding-left: 165px;
+}
+#leftcolumn { 
+ color: #333;
+ border: 1px solid #ccc;
+ background: #E7DBD5;
+ margin: 0px 0px 0px 0px;
+ padding: 10px;
+ height: 483px;
+ width: 150px;
+ float: left;
+ padding-bottom: 30px;
+}
+#leftcolumn table input{
+	display:block;
+	width:100%;
+	height:auto;
+}
+#rightcolumn { 
+ float: right;
+ color: #333;
+ border: 1px solid #ccc;
+ background: #F2F2E6;
+ margin: 0px 0px 0px 0px;
+ padding: 10px;
+ height: 483px;
+ width: 728px;
+ display: inline;
+ overflow: auto;
+ padding-bottom: 30px;
+}
+
+#searchTb, #postListTb{
+	width: 90%;
+	height: 100%;
+	border: 1px solid;
+	border-collapse: collapse;
+	    border: 1px solid #444444;
+    padding: 5px;
+	
+}
+#postDetailTb, #commentTb, #addPostTb{
+	width: 80%;
+	height: 100%;
+	border: 1px solid;
+	border-collapse: collapse;
+	
+}
+ th, td {
+    border: 1px solid #444444;
+    padding: 5px;
+}
+#footer { 
+ width: 900px;
+ clear: both;
+ color: #333;
+ border: 1px solid #ccc;
+ background: #BD9C8C;
+ margin: 0px 0px 10px 0px;
+ padding: 10px;
+ text-align: center;
+}
+#joinBtn{
+	width: 73px;
+	text-align: center;
+}
+#loginBtn{
+	width: 74px;
+	float: left;
+}
+#loginBtn, #joinBtn{
+	width: 132px;
+}
+#writeBtn{
+	position: relative;
+	left: 514px;
+	width: 69px;
+}
+#nextPost{
+/* 	position: relative; */
+	top:15px;
+	left: 273px;
+	margin-left: 35%;
+}
+#previousPost{
+/* 	position: relative; */
+	top:15px;
+}
+#joinUserInfoBtn{
+	position: relative;
+	top:15px;
+	left: 210px;
+}
+.listBtn{
+	width:30px;
+    background-color: rgb(239, 239, 239);
+    border: solid 1px;   
+    border-radius: 2px;
+    color:black;
+    padding: 2px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px;
+    cursor: pointer;
+}
+#searchForm td{
+	border: none;
+	text-align: right;
+}
+#userInfo{
+	text-align: center;
+	padding-top: 6px;
+}
+#userInfo h1{
+	padding-bottom: 6px;
+}
+#commentContents{
+	width: 250px;
+}
+#postMsg{
+	color: red;
+	padding: 15px 20px;
+}
+
+#loginMsg{
+	width:140px;
+	color: red;
+	padding: 5px 5px;
+}
+#postMsg{
+	position: relative;
+}
+.commentDelBtn{
+    margin-left: 10px;
+}
+
