@@ -19,7 +19,7 @@ public class MainController {
 
 	
 	@Autowired
-	private PostService postService;
+	private PostService postService; 
 	
 	@GetMapping("/")
 	public String main(Model model, Pagination paging) {
