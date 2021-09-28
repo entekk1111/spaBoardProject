@@ -1,10 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns:th="http://www.thymeleaf.org">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
 <head th:replace="fragments/head :: headFragment">
-<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-
+<meta charset="UTF-8">
 </head>
-
 <body>
    <div id="wrapper">
          <div id="header" th:replace="fragments/header :: headerFragment"></div>
@@ -21,13 +22,30 @@
 					<tbody>
 						<tr>
 							<td>
-								<h1 th:if="${sequence == '' or sequence == null and value == null}" style="text-align: left;">최신게시글</h1>
-								<h1 th:if="${sequence == 'postView'}" style="text-align: left;">조회수 best</h1>
-								<h1 th:if="${sequence == 'postLike'}" style="text-align: left;">공감수 best</h1>
-								<h1 th:if="${conditions == 'chat'}" style="text-align: left;">잡담</h1>
-								<h1 th:if="${conditions == 'hobby'}" style="text-align: left;">취미</h1>
-								<h1 th:if="${conditions == 'horror'}" style="text-align: left;">공포</h1>
-								<h1 th:if="${value != '' and value != null and conditions != ''.toString() and conditions != ''}" style="text-align: left;">검색결과</h1>
+							<c:if test="${sequence == '' or sequence == null and value == null}">
+								<h1>최신게시글</h1>
+							</c:if>
+							<c:if test="${sequence == 'postView'}">
+								<h1>조회수best</h1>
+							</c:if>
+							<c:if test="${sequence == 'postLike'}">
+								<h1>공감수</h1>
+							</c:if>
+							<c:if test="${sequence == '' or sequence == null and value == null}">
+								<h1>최신게시글</h1>
+							</c:if>
+							<c:if test="${conditions == 'chat'}">
+								<h1>잡담</h1>
+							</c:if>
+							<c:if test="${conditions == 'hobby'}">
+								<h1>취미</h1>
+							</c:if>
+							<c:if test="${conditions == 'horror'}">
+								<h1>공포</h1>
+							</c:if>
+							<c:if test="${value != '' and value != null and conditions != ''.toString() and conditions != ''}">
+								<h1>검색결과</h1>
+							</c:if>
 								<b>[통합검색] : </b>
 							 	<select name="conditions">
 				 					<option value="postName">제목</option>
