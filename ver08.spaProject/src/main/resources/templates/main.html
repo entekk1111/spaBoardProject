@@ -73,10 +73,6 @@
 		 						<a th:if="${currentPage > 1}" th:href="@{/(sequence=${sequence}
 		 																,conditions=${conditions}
 		 																,value=${value})}">[처음으로]</a>
-		 						<a th:if="${currentPage > 1}" th:href="@{/(currentPage=${currentPage - 1}
-		 																,sequence=${sequence}
-		 																,conditions=${conditions}
-		 																,value=${value})}">[이전]</a>
 		 						
 		 						<th:block th:each="num:${#numbers.sequence(pageStartNum, pageEndNum)}">
 		 							<a th:if="${num != currentPage}" th:href="@{/(currentPage=${num}
@@ -85,11 +81,7 @@
 		 																		,value=${value})}">[[${num}]]</a>
 		 							<a th:unless="${num != currentPage}" style="color: red;">[[${num}]]</a>
 		 						</th:block>
-		 						<a th:if="${currentPage < lastPage}" th:href="@{/(currentPage=${currentPage + 1}
-		 																		,sequence=${sequence}
-		 																		,conditions=${conditions}
-		 																		,value=${value})}">[다음]</a>
-		 						<a th:if="${pageEndNum != currentPage}" th:href="@{/(currentPage=${lastPage}
+		 						<a th:if="${pageEndNum != currentPage}" th:href="@{/(currentPage=${lastPage+1}
 		 																			,sequence=${sequence}
 		 																			,conditions=${conditions}
 		 																			,value=${value})}">[맨마지막으로]</a>
